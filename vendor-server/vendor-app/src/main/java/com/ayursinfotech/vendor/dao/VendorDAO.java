@@ -1,6 +1,6 @@
 package com.ayursinfotech.vendor.dao;
 
-public interface VirtualccDAO {
+public interface VendorDAO {
 
 	Boolean ping() throws Exception;
 }

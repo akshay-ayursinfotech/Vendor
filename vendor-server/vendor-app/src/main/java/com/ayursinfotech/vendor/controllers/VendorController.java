@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.ayursinfotech.vendor.response.BaseResponse;
-import com.ayursinfotech.vendor.service.VirtualccService;
+import com.ayursinfotech.vendor.service.VendorService;
 
 @Controller
 @RequestMapping(value = "/virtualcc")
-public class VirtualccController {
+public class VendorController {
 
 	@Autowired
-	private VirtualccService virtualccService;
+	private VendorService virtualccService;
 
 	@RequestMapping(value = "/ping", method = RequestMethod.GET)
 	@ResponseStatus(value = HttpStatus.OK)

@@ -3,25 +3,25 @@ package com.ayursinfotech.vendor.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ayursinfotech.vendor.dao.VirtualccDAO;
+import com.ayursinfotech.vendor.dao.VendorDAO;
 import com.ayursinfotech.vendor.response.BaseResponse;
-import com.ayursinfotech.vendor.service.VirtualccService;
-import com.ayursinfotech.vendor.util.VirtualccConstants;
+import com.ayursinfotech.vendor.service.VendorService;
+import com.ayursinfotech.vendor.util.VendorConstants;
 
 @Service
-public class VirtualccServiceImpl implements VirtualccService {
+public class VendorServiceImpl implements VendorService {
 
 	@Autowired
-	private VirtualccDAO virtualccDAO;
+	private VendorDAO virtualccDAO;
 
 	@Override
 	public BaseResponse ping() {
 		BaseResponse response = new BaseResponse();
 		try {
 			if (virtualccDAO.ping()) {
-				response.setStatus(VirtualccConstants.STATUS_SUCCESS);
+				response.setStatus(VendorConstants.STATUS_SUCCESS);
 			} else {
-				response.setStatus(VirtualccConstants.STATUS_FAILURE);
+				response.setStatus(VendorConstants.STATUS_FAILURE);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
