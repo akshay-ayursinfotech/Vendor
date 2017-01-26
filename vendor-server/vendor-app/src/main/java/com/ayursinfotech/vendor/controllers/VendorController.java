@@ -1,5 +1,6 @@
 package com.ayursinfotech.vendor.controllers;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -12,16 +13,18 @@ import com.ayursinfotech.vendor.response.BaseResponse;
 import com.ayursinfotech.vendor.service.VendorService;
 
 @Controller
-@RequestMapping(value = "/virtualcc")
 public class VendorController {
 
+	private static final Logger LOGGER = Logger
+			.getLogger(VendorController.class);
 	@Autowired
-	private VendorService virtualccService;
+	private VendorService vendorService;
 
 	@RequestMapping(value = "/ping", method = RequestMethod.GET)
 	@ResponseStatus(value = HttpStatus.OK)
 	@ResponseBody
 	public BaseResponse ping() {
-		return virtualccService.ping();
+		LOGGER.info("start executing ping");
+		return vendorService.ping();
 	}
 }
